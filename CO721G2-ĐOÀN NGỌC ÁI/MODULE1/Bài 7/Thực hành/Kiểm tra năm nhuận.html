@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tittle </title>
+</head>
+<body>
+
+<script>
+
+    let year = (prompt("enter leap year "));
+    let isLeapYear = false;
+    let isDivisibleBy4 = year %4 == 0;
+    if (isDivisibleBy4 ){
+        let isDivisibleBy100 = year % 100 == 0;
+        if (isDivisibleBy100 ) {
+            let isDivisibleBy400 = year % 400 == 0;
+            if (isDivisibleBy400) {
+            }   isleapyear =true;
+        } else {
+            isleapyear = false;
+            if(isleapyear ) {
+                alert("is a leap year:" + year);
+
+            } else {
+
+                alert("is not a leap year:" + year );
+
+            }
+
+        }
+    }
+
+    </script>
+<head>
+    </body>
+
+
+</head>
+</html>
