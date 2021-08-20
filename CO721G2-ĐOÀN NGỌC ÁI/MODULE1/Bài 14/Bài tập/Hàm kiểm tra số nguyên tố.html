@@ -2,9 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h2> Hàm Kiểm tra số nguyên tố </h2>
+<input type="text" id="nhapso">
+<input type="button" value="kiểm tra" onclick="SoNguyenTo()">
+<script>
+function isPrime(number){
+    if(number<=1) return false
+    else if(number == 2 || number == 3) return true
+    else if(number%2 == 0) return false
+    else{
+        for(i=3; i<number; i+=2){
+            if(number%i == 0)  {
+                return false
+            }
+
+        }
+    }
+
+    return true
+}
+
+function SoNguyenTo() {
+    let so = document.getElementById("nhapso")
+    let kiemtra = isPrime(so.value)
+    if (kiemtra) {
+        alert(so.value + " là một số nguyên tố ")
+
+    } else {
+        alert(so.value + "không phải là số nguyên tố ")
+
+
+    }
+}
+
+</script>
+
+
+
 </body>
 </html>

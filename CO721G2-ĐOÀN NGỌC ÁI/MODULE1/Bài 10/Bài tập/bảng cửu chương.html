@@ -2,9 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <style>
+        table {
+            width: 90%;
+            border-collapse: collapse;
+        }
+
+        td {
+           padding:1px;
+           border:1px solid;
+       }
+
+    </style>
+
+
+
+
 </head>
 <body>
-$END$
+
+<script>
+
+let result;
+result = "<table border = '1'>"
+    for (i=2; i<=9; i++ ){
+        for (j=1; j<=9; +j++ ){
+
+           let mul = [i]*[j];
+           result = result+"<td>" + [i]+"x"+[j]+ "="+ mul + "</td>";
+    }
+        result = result + "</tr>" ;
+    }
+
+
+
+result = result + "</table>";
+document.write(result);
+
+
+
+
+</script>
+
+
 </body>
+
 </html>

@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let so = Number(prompt("Nhập một số để tính giai thừa "));
+    let giaithua = 1;
+    if (so == 0|| so == 1){
+        giaithua = 1;
+
+    } else if(so<0){
+        alert("error!");
+
+    } else {
+      for(i=1; i<=so; i++){
+          giaithua=giaithua*i;
+      }
+      document.write("giai thừa của:"+so+ "="+giaithua)
+    }
+</script>
 </body>
 </html>

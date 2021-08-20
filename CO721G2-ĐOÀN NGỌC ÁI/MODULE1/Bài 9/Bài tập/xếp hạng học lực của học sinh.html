@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let diemcacbaikiemtra = Number(prompt("nhập điểm trung bình của các bài kiểm tra "))
+    let diemgiuaky = Number(prompt("nhập điểm giữa kỳ "))
+    let diemcuoiky = Number(prompt("nhập điểm cuối kỳ "))
+    let diemtrungbinh = 0
+     diemtrungbinh =(diemcacbaikiemtra+diemgiuaky+diemcuoiky)/ 3
+    if(diemtrungbinh >=9){
+        alert("học sinh giỏi")
+    } else if(diemtrungbinh >=7){
+        alert("học sinh khá")
+    } else if (diemtrungbinh>=5){
+        alert("học sinh trung bình")
+    } else if (diemtrungbinh<3){
+        alert("học sinh yếu")
+    }
+
+
+
+
+
+
+
+</script>
+
+
+
+
 </body>
 </html>
