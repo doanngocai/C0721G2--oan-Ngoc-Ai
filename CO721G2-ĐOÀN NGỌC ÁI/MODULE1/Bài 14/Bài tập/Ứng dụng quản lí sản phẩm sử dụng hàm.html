@@ -5,25 +5,67 @@
     <title>Title</title>
 </head>
 <body>
+<input placeholder="Tên sản phẩm" id="product">
+<button onclick="addNewProduct()">Add product</button>
+<p id="result"></p>
+<p id="editProduct"></p>
+<script>
+    let arr = ["SamSung", "Sony", "LG", "Nokia"];
+    displayProduct();
 
-<form action="javascript:void(0);" method="POST" onsubmit="listPhone.add()">
-    <input type="text" id="add" placeholder="Thêm sản phẩm">
-    <input type="submit" value="Thêm" >
-</form>
-<br><br>
+    function displayProduct() {
+        let data = "<table>"
+        for (let i = 0; i < arr.length; i++) {
+            data += "<tr>"
+            data += "<td>" + arr[i] + "</td>"
+            data += "<td><button onclick='editProduct(" + i + ")'>Edit</button></td>"
+            data += "<td><button onclick='deleteProduct(" + i + ")'>Delete</button></td>"
+            data += "</tr>"
+        }
+        data += "</table>"
+        document.getElementById("result").innerHTML = data;
+    }
 
-<table border="1px" cellpadding="0" cellspacing="0" width="600" style="text-align: center; ">
-    <tr>
-        <th style="padding: 10px 0;">Tổng các sản phẩm</th>
-        <th colspan="2" style="padding: 10px 0;"><p id="soluong"></p></th>
-    </tr>
-    <tbody id="product"></tbody>
-</table>
-<br><br>
+    function addNewProduct() {
+        let product = document.getElementById("product").value;
+        arr.push(product);
+        displayProduct();
+        document.getElementById("product").value = "";
+    }
 
-<form action="javascript:void(0);" method="POST" id="saveEdit" >
-    <input type="text" id="edit">
-    <input type="submit" value="Edit" />
+    function deleteProduct(index) {
+        if (confirm("bạn có chắc muốn xóa sản phẩm " + arr[index])) {
+            arr.splice(index, 1)
+            displayProduct();
+        }
+    }
+
+    function editProduct(index) {
+        let data = "<table>"
+        for (let i = 0; i < arr.length; i++) {
+            if(i ==index) {
+                data += "<tr>"
+                data += "<td><input id='productEdit' value='"+arr[i]+"'></td>"
+                data += "<td><button onclick='saveProduct(" + i + ")'>Save</button></td>"
+                data += "</tr>"
+            } else {
+                data += "<tr>"
+                data += "<td>" + arr[i] + "</td>"
+                data += "<td><button onclick='editProduct(" + i + ")'>Edit</button></td>"
+                data += "<td><button onclick='deleteProduct(" + i + ")'>Delete</button></td>"
+                data += "</tr>"
+            }
+        }
+        data += "</table>"
+        document.getElementById("result").innerHTML = data;
+    }
+
+    function saveProduct(index) {
+        arr[index] = document.getElementById("productEdit").value;
+        displayProduct();
+        document.getElementById("editProduct").innerHTML="";
+    }
+</script>
 </form>
 </body>
 </html>

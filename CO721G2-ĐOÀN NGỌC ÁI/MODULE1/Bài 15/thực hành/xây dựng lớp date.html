@@ -40,28 +40,18 @@
          let Date_today = new MyDate(18,8,2019)
 
 
-            let Day = Date.getDay();
-            let month = Date.getMonth();
-            let year = Date.getYear();
+            let Day = Date_today.getDay();
+            let month = Date_today.getMonth();
+            let year = Date_today.getYear();
              alert(Day+"/"+month+"/"+year);
 
-             Date.setDay(19);
-             Date.setMonth(8);
-             Date.setYear(2021);
-             alert(Day+"/"+month+"/"+year);
-
-             this.setDate=(Day,month,year);
-             this.Day = Day;
-             this.month = month;
-             this.year = year;
-             let getString =Date_today.getDate();
-            let setString  =  Date_today.setDay (19,8,2021 );
-
+             Date_today.setDay(19);
+             Date_today.setMonth(8);
+             Date_today.setYear(2021);
+             alert(Date_today.getDay());
 
 
 </script>
-
-
 
 </body>
 </html>
