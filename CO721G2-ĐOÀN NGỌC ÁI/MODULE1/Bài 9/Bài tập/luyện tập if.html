@@ -5,28 +5,20 @@
     <title>Title</title>
 </head>
 <body>
-
 <script>
-    if (BMI<18,5){
-
-    }  document.write("under weight")
-    if (BMI<25) {
-        document.write("Nomal")
-        if (BMI < 25) {
-
-
-            if(BMI<30){
-
-}
-        }
-        document.write("over weight")
-
-    } else{
-     document.write("obese");
-
-
+    let weight = Number (prompt("nhập vào cân nặng(theo kilogam )  "));
+    let height = Number (prompt("nhập vào chiều cao(theo centimet) "));
+    let BMI = (weight*10000) / ( height*height );
+    alert(BMI.toFixed(1));
+    if(BMI<18){
+        alert("Bạn bị thiếu cân")
+    }else if(BMI<25){
+        alert("Bình thường")
+    }else if(BMI<30){
+        alert("Bạn hơi béo")
+    }else{
+        alert("Bạn quá béo")
     }
-
 
 
 
